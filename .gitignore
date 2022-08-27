@@ -2,3 +2,4 @@
 *.so
 *wrap*.c*
 build
+example.py
