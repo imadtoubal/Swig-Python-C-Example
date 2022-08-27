@@ -1,4 +1,4 @@
-obj = example_wrap.c _example.so
+obj = example_wrap.cxx _example.so
 
 .PHONY: all
 all : $(obj)
@@ -9,8 +9,8 @@ clean:
 	rm -f *wrap*.c*
 	rm -Rf build
 
-example_wrap.c : example.i
-	swig -python example.i
+example_wrap.cxx : example.i
+	swig -python -c++ example.i
 
 _example.so: example.i
 	python setup.py build_ext --inplace
